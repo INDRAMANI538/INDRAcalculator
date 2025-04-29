@@ -11,7 +11,6 @@ let currentExpression = '';
 let historyExpression = '';
 let justEvaluated = false;
 
-// Format number with commas
 function formatNumberWithCommas(numStr) {
   if (!numStr) return '';
   const [intPart, decimalPart] = numStr.split('.');
@@ -20,13 +19,10 @@ function formatNumberWithCommas(numStr) {
     (decimalPart ? '.' + decimalPart : '')
   );
 }
-
-// Update screen and apply formatting
 function updateScreen(text) {
   screen.innerText = text;
 }
 
-// Evaluate expression safely
 function evaluateExpression(expr) {
   try {
     const result = eval(expr);
@@ -36,7 +32,6 @@ function evaluateExpression(expr) {
   }
 }
 
-// Button click handler
 buttons.forEach(button => {
   const value = button.dataset.value;
 
@@ -58,15 +53,15 @@ buttons.forEach(button => {
 
       const lastChar = currentExpression.slice(-1);
 
-      // Prevent same operator from being entered consecutively
+     
       if ('+-*/'.includes(lastChar) && '+-*/'.includes(value)) {
-        if (lastChar === value) return; // Block repeating same operator
+        if (lastChar === value) return; 
       }
 
-      // Prevent entering multiple decimals for the same operand
+    
       if (value === '.' && currentExpression.slice(-1) !== '.' && !/[+\-*/]/.test(currentExpression.slice(-1))) {
         const lastOperand = currentExpression.split(/[\+\-\*/]/).pop();
-        if (lastOperand.includes('.')) return; // Prevent multiple decimals in the same number
+        if (lastOperand.includes('.')) return;
       }
 
       currentExpression += value;
@@ -83,13 +78,13 @@ buttons.forEach(button => {
   });
 });
 
-// Clear button (clear current input)
+
 clearButton.addEventListener('click', () => {
   currentExpression = '';
   updateScreen('0');
 });
 
-// Backspace button
+
 backButton.addEventListener('click', () => {
   currentExpression = currentExpression.slice(0, -1);
   if (!currentExpression) {
@@ -103,7 +98,7 @@ backButton.addEventListener('click', () => {
   }
 });
 
-// Equals button (show the result)
+
 equalsButton.addEventListener('click', () => {
   const result = evaluateExpression(currentExpression);
   if (result !== 'Error') {
@@ -117,7 +112,6 @@ equalsButton.addEventListener('click', () => {
   }
 });
 
-// Replay button (show the full operation)
 replayButton.addEventListener('click', () => {
   if (historyExpression) {
     updateScreen(historyExpression);
@@ -127,7 +121,7 @@ replayButton.addEventListener('click', () => {
   }
 });
 
-// Download result button
+
 downloadButton.addEventListener('click', () => {
   if (historyExpression) {
     const blob = new Blob([historyExpression], { type: 'text/plain' });
@@ -140,14 +134,13 @@ downloadButton.addEventListener('click', () => {
   }
 });
 
-// Clear history button (clear all history)
+
 clearHistoryButton.addEventListener('click', () => {
-  historyExpression = ''; // Clear history
+  historyExpression = ''; 
   updateScreen('History Cleared');
-  setTimeout(() => updateScreen('0'), 1000); // Clear message after 1 second
+  setTimeout(() => updateScreen('0'), 1000); 
 });
 
-// Keyboard support
 document.addEventListener('keydown', (event) => {
   const key = event.key;
 

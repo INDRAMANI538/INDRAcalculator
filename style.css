@@ -113,9 +113,9 @@ body {
   margin-right: 8px;
 }
 
-/* Clear History Button Style */
+
 #clearHistory {
-  background-color: #ff4081; /* A distinct color for clear history */
+  background-color: #ff4081; 
   color: white;
   border: none;
   border-radius: 8px;
@@ -128,7 +128,7 @@ body {
 }
 
 #clearHistory:hover {
-  background-color: #f50057; /* Hover effect for clear history */
+  background-color: #f50057; 
 }
 
 #clearHistory i {
