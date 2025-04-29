@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lord Indra Calc</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+  <div class="header">
+    <h1 class="lordindra">LORD INDRA'S CALCULATOR</h1>
+  </div>
+
+  <div class="calc-wrapper">
+    <div class="screen" id="screen">0</div>
+    <div class="buttons">
+      
+      <button class="btn" data-value="7">7</button>
+      <button class="btn" data-value="8">8</button>
+      <button class="btn" data-value="9">9</button>
+      <button class="btn operator" data-value="/">÷</button>
+
+      <button class="btn" data-value="4">4</button>
+      <button class="btn" data-value="5">5</button>
+      <button class="btn" data-value="6">6</button>
+      <button class="btn operator" data-value="*">×</button>
+
+      <button class="btn" data-value="1">1</button>
+      <button class="btn" data-value="2">2</button>
+      <button class="btn" data-value="3">3</button>
+      <button class="btn operator" data-value="-">−</button>
+
+      <button class="btn" data-value="0">0</button>
+      <button class="btn" data-value=".">.</button>
+      <button class="btn" id="replay">🔁</button>
+      <button class="btn operator" data-value="+">+</button>
+
+      <button class="btn" id="clear">C</button>
+      <button class="btn" id="back">⌫</button>
+      <button class="btn" id="equals" colspan="2">=</button>
+      <button class="btn" id="download">
+        <i class="fas fa-download"></i> Download Result
+      </button>
+      <button class="btn" id="clearHistory">Clear History</button>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
